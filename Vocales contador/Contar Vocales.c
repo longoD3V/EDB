@@ -6,7 +6,7 @@
 #define LARGO_CAD 81
 
 void mostrar(FILE *x);
-void mostrarVocalesPorRenglon(FILE *x);
+void mostrarVocales(FILE *x);
 int contarVocales(char *x);
 
 
@@ -31,7 +31,7 @@ int main(){
 
         rewind(archivo);
         printf("\n\nCantidad de vocales por renglón:\n\n");
-        mostrarVocalesPorRenglon(archivo);
+        mostrarVocales(archivo);
 
         printf("\nFin del programa...(presione cualquier tecla para terminar)\n");
         getchar();
@@ -51,11 +51,11 @@ void mostrar(FILE *x) {
 }
 
 // Mostrar cantidad de vocales por línea
-void mostrarVocalesPorRenglon(FILE *x) {
+void mostrarVocales(FILE *x) {
     char cad[LARGO_CAD];
     int renglon = 1;
     while (fgets(cad, sizeof(cad), x) != NULL) {
-        printf("El renglón %d posee %d vocales\n", renglon, contarVocales(cad));
+        printf("El renglon %d posee %d vocales\n", renglon, contarVocales(cad));
         renglon++;
     }
 }
